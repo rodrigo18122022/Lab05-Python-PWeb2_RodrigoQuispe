@@ -28,10 +28,12 @@ class Picture:
     def negative(self):
         """ Devuelve un negativo de la imagen """
         negative = []
-        for i in self.img:
-            for j in i:
-                Picture._invColor(self,j)
-        return  negative
+        for line in self.img:
+            linea_invertida = ""
+            for char in line:
+                linea_invertida += self._invColor(char)
+            negative.append(linea_invertida)
+        return Picture(negative)
 
     def join(self, p):
         """ Devuelve una nueva figura poniendo la figura del argumento 
