@@ -1,4 +1,4 @@
 from interpreter import draw
 from chessPictures import *
 
-draw(knight.under(rock))
+draw(knight.under(rock).horizontalRepeat(3))
