@@ -50,7 +50,12 @@ class Picture:
     def under(self, p):
         """ Devuelve una nueva figura poniendo la figura p sobre la
             figura actual """
-        combinada = p.img + self.img
+        combinada = []
+        for line1, line2 in zip(p.img, self.img):
+            linea_combinada = ''
+            for c1, c2 in zip(line1, line2):
+                linea_combinada += c1 if c1 != ' ' else c2
+            combinada.append(linea_combinada)
         return Picture(combinada)
 
     def horizontalRepeat(self, n):
